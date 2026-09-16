@@ -2,7 +2,7 @@ import streamlit as st
 
 # הגדרת הגדרות דף קבועות (כותרת בלשונית בדפדפן, אייקון ועימוד)
 st.set_page_config(
-    page_title="מחשבון חיזוי נדל"ל",
+    page_title="מחשבון חיזוי מחיר דירות",
     page_icon="🏠",
     layout="centered"
 )
