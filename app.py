@@ -2,7 +2,7 @@ import streamlit as st
 
 # הגדרות דף קבועות
 st.set_page_config(
-    page_title="מחשבון חיזוי נדל"ל",
+    page_title="מחשבון חיזוי נדלן",
     page_icon="🏠",
     layout="centered"
 )
@@ -14,7 +14,7 @@ st.markdown("---")
 
 # תפריט צדדי (Sidebar) להסבר
 st.sidebar.header("ℹ️ אודות המודל")
-st.sidebar.write("מערכת זו משתמשת במודל **Linear Regression** שהאומן על מאגר נתוני נדל\"ל.")
+st.sidebar.write("מערכת זו משתמשת במודל Linear Regression שאומן על מאגר נתוני נדלן.")
 st.sidebar.info("המודל מחשב את המחיר המוערך לפי מספר הקומות שבחרת.")
 
 # מקדמי המודל (מתוך Google Colab)
