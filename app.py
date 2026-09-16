@@ -23,12 +23,12 @@ B = 499615.318210763
 
 st.markdown("### 📊 Enter Property Features")
 
-# Full-width slider
-floors = st.slider(
+# Number input field (safe from browser translation bugs)
+floors = st.number_input(
     "Select the number of floors:",
     min_value=1,
     max_value=10,
-    value=2,
+    value=1,
     step=1
 )
 
