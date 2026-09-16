@@ -14,7 +14,7 @@ st.markdown("---")
 
 # תפריט צדדי (Sidebar) להסבר
 st.sidebar.header("ℹ️ אודות המודל")
-st.sidebar.write("מערכת זו משתמשת במודל **Linear Regression** שהאומן על מאגר נתוני נדל\"ל.")
+st.sidebar.write("מערכת זו משתמשת במודל Linear Regression שאומן על מאגר נתוני נדלן")
 st.sidebar.info("המודל מחשב את המחיר המוערך לפי מספר הקומות שבחרת.")
 
 # מקדמי המודל (מתוך Google Colab)
