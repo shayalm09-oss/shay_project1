@@ -1,27 +1,61 @@
 import streamlit as st
 
-# הגדרת כותרת האתר ותיאור קצר
-st.title("🏠 מחשבון לחיזוי מחירי בתים")
-st.write("הזן את נתוני הבית כדי לקבל הערכת מחיר המבוססת על מודל רגרסיה לינארית.")
-
-# המקדמים שנמצאו באימון המודל
-w = 19092.82005981288
-b = 499615.318210763
-
-# תיבת קלט מהשתמש - מספר קומות
-# (הגדרנו ברירת מחדל של 1, מינימום 1 ומקסימום 10)
-floors = st.number_input(
-    label="מספר קומות (Floors):", 
-    min_value=1, 
-    max_value=10, 
-    value=1, 
-    step=1
+# הגדרת הגדרות דף קבועות (כותרת בלשונית בדפדפן, אייקון ועימוד)
+st.set_page_config(
+    page_title="מחשבון חיזוי נדל"ל",
+    page_icon="🏠",
+    layout="centered"
 )
 
-# כפתור לביצוע החיזוי
-if st.button("חשב מחיר מוערך"):
-    # חישוב החיזוי לפי הנוסחה y = w * x + b
-    predicted_price = (w * floors) + b
+# כותרת ראשית וסגנון
+st.title("🏠 מחשבון לחיזוי מחירי בתים")
+st.subheader("מערכת חכמה להערכת שווי נכסים מבוססת Machine Learning")
+st.markdown("---")
+
+# תפריט צדדי (Sidebar) להסבר
+st.sidebar.header("ℹ️ אודות המודל")
+st.sidebar.write("מערכת זו משתמשת במודל **Linear Regression** שהאומן על מאגר נתוני נדל\"ל.")
+st.sidebar.info("המודל מחשב את המחיר המוערך לפי מספר הקומות שבחרת.")
+
+# מקדמי המודל (מתוך Google Colab)
+W = 19092.82005981288
+B = 499615.318210763
+
+# עיצוב אזור הקלט בתוך קופסה מעוצבת
+st.markdown("### 📊 הזן את מאפייני הבית")
+
+col1, col2 = st.columns([2, 1])
+
+with col1:
+    floors = st.slider(
+        "בחר את מספר הקומות בבית:",
+        min_value=1,
+        max_value=10,
+        value=2,
+        step=1,
+        help="הזז את הסרגל כדי לבחור את מספר הקומות"
+    )
+
+with col2:
+    st.write("") # מרווח לעיצוב
+    st.write("")
+    st.metric(label="קומות שנבחרו", value=f"{floors}")
+
+st.markdown("---")
+
+# כפתור חישוב בולט
+if st.button("🚀 חשב מחיר משוער", use_container_width=True):
+    # חישוב החיזוי
+    predicted_price = (W * floors) + B
     
-    # הצגת התוצאה
-    st.success(f"המחיר המשוער לבית בעל {floors} קומות הוא: **${predicted_price:,.2f}**")
+    # הצגת התוצאה בכרטיסיה מעוצבת
+    st.balloons() # אפקט חגיגי
+    st.success("החישוב הושלם בהצלחה!")
+    
+    st.metric(
+        label="מחיר מוערך לבית:",
+        value=f"${predicted_price:,.2f}"
+    )
+    
+    # הסבר נוסף מתחת לתוצאה
+    st.caption(f"* הערכה זו מבוססת על מקדם של כ-${W:,.0f} לכל קומה נוספת + מחיר בסיס של כ-${B:,.0f}.")
