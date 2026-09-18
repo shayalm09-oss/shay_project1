@@ -11,7 +11,7 @@ st.markdown("""
     <style>
     /* שינוי צבע הרקע של כל העמוד */
     .stApp {
-        background-color: #f5f7fa;
+        background-color: #F8FAFC;
     }
     
     /* שינוי צבע הכתב של הכותרת הראשית */
