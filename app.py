@@ -7,6 +7,38 @@ st.set_page_config(
     layout="centered"
 )
 
+st.markdown("""
+    <style>
+    /* שינוי צבע הרקע של כל העמוד */
+    .stApp {
+        background-color: #f5f7fa;
+    }
+    
+    /* שינוי צבע הכתב של הכותרת הראשית */
+    h1 {
+        color: #1E3A8A !important;
+    }
+    
+    /* שינוי צבע הרקע של סרגל הצד (Sidebar) */
+    [data-testid="stSidebar"] {
+        background-color: #e2e8f0;
+    }
+    
+    /* שינוי צבע הכפתור */
+    .stButton>button {
+        background-color: #2563EB;
+        color: white;
+        border-radius: 8px;
+    }
+    
+    /* שינוי צבע הכפתור כשעוברים עליו עם העכבר */
+    .stButton>button:hover {
+        background-color: #1D4ED8;
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Main Title and Subtitle
 st.title("🏠 House Price Prediction Calculator")
 st.subheader("Smart Real Estate Valuation Powered by Machine Learning")
