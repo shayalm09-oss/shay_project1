@@ -49,7 +49,7 @@ st.sidebar.header("ℹ️ About the Model")
 st.sidebar.write("This app uses a **Linear Regression** model trained on a real estate dataset.")
 st.sidebar.info("The model calculates the estimated price based on the selected number of floors.")
 st.sidebar.info("the model was trained with sklearn in google colab by making x the number of floors to a matrix and than training it.")
-st.sidebar.info("the loss for the baseline is:239050.39114499997 .\n"+"the loss for this model is: 238744.2118532495 .")
+st.sidebar.info("the loss for the baseline is:239050.39114499997 .  \n"+"the loss for this model is: 238744.2118532495 .")
 
 # Model Coefficients (from Google Colab)
 W = 19092.82005981288
