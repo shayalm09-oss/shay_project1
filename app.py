@@ -162,7 +162,7 @@ with tab2:
                 st.button("Next Round ➡️")
             else:
                 st.session_state.game_over = True
-                st.experimental_rerun()
+                st.rerun()
 
     else:
         # מסך סיום משחק
