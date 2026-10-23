@@ -184,4 +184,4 @@ with tab2:
             st.session_state.model_score = 0
             st.session_state.game_over = False
             st.session_state.samples = random.sample(DATASET_SAMPLES, 5)
-            st.experimental_rerun()
+            st.rerun()
